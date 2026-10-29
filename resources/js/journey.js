@@ -1,5 +1,5 @@
 /**
- * Perjalanan 12 Tahap — Interactive Engine
+ * Perjalanan 12 Tahap — Interactive Engine (Upgraded Celestial)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentView = 'cinematic'; // 'intro' | 'cinematic' | 'read' | 'end'
   let isSoundOn = false;
   let audioContext = null;
-  let ambientOsc = null;
+  let ambientOsc1 = null;
+  let ambientOsc2 = null;
   let ambientGain = null;
-  let arabicSizes = ['1.7rem', '2.2rem', '2.7rem'];
+  let arabicSizes = ['1.8rem', '2.3rem', '2.8rem'];
   let currentArabicSizeIdx = 1;
 
   // DOM Elements
-  const container = document.getElementById('journey-container');
   const canvas = document.getElementById('journey-canvas');
   const introSection = document.getElementById('journey-intro');
   const cinematicSection = document.getElementById('journey-cinematic');
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const endSection = document.getElementById('journey-end');
   const stageCounter = document.getElementById('stage-counter');
   const progressDots = document.querySelectorAll('.trail-dot');
+  const scrubberPills = document.querySelectorAll('.scrubber-pill');
   const prevBtn = document.getElementById('prev-stage-btn');
   const nextBtn = document.getElementById('next-stage-btn');
   const deepDivePanel = document.getElementById('deep-dive-panel');
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Toast
   const toast = document.getElementById('journey-toast');
-  function showToast(text, duration = 2000) {
+  function showToast(text, duration = 2200) {
     if (!toast) return;
     toast.textContent = text;
     toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
@@ -60,12 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, duration);
   }
 
-  // 1. Ambient Background Particle Canvas
+  // 1. Upgraded Ambient Celestial Canvas (Stars, Nebula Glow, Shooting Stars)
   let ctx = null;
-  let particles = [];
+  let stars = [];
+  let shootingStars = [];
   let animFrameId = 0;
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const particleCount = window.innerWidth < 768 ? 60 : 120;
+  const starCount = window.innerWidth < 768 ? 90 : 180;
 
   function initCanvas() {
     if (!canvas || isReducedMotion) return;
@@ -73,19 +75,20 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas, { passive: true });
 
-    particles = [];
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
+    stars = [];
+    for (let i = 0; i < starCount; i++) {
+      stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 0.5,
+        r: Math.random() * 2 + 0.4,
         alpha: Math.random() * 0.8 + 0.2,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3
+        twinkleSpeed: Math.random() * 0.02 + 0.005,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2
       });
     }
 
-    renderParticles();
+    renderAtmosphere();
   }
 
   function resizeCanvas() {
@@ -94,41 +97,84 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = window.innerHeight;
   }
 
-  function renderParticles() {
+  function createShootingStar() {
+    if (shootingStars.length < 2 && Math.random() < 0.015) {
+      shootingStars.push({
+        x: Math.random() * canvas.width * 0.8,
+        y: Math.random() * canvas.height * 0.4,
+        len: Math.random() * 80 + 50,
+        speed: Math.random() * 10 + 12,
+        angle: Math.PI / 4 + (Math.random() - 0.5) * 0.2,
+        opacity: 1
+      });
+    }
+  }
+
+  function renderAtmosphere() {
     if (!ctx || document.hidden || isReducedMotion) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const stage = stagesData[currentStageIndex] || stagesData[0];
     const glowColor = stage.glow || '#cfe0ff';
 
-    ctx.fillStyle = glowColor;
-    particles.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
+    // 1. Draw Twinkling Stars
+    stars.forEach(s => {
+      s.x += s.vx;
+      s.y += s.vy;
+      s.alpha += s.twinkleSpeed;
+      if (s.alpha > 0.95 || s.alpha < 0.2) s.twinkleSpeed = -s.twinkleSpeed;
 
-      if (p.x < 0) p.x = canvas.width;
-      if (p.x > canvas.width) p.x = 0;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
+      if (s.x < 0) s.x = canvas.width;
+      if (s.x > canvas.width) s.x = 0;
+      if (s.y < 0) s.y = canvas.height;
+      if (s.y > canvas.height) s.y = 0;
 
-      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle = glowColor;
+      ctx.globalAlpha = Math.max(0.1, Math.min(1, s.alpha));
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fill();
     });
 
-    animFrameId = requestAnimationFrame(renderParticles);
+    // 2. Draw Shooting Stars (Syuhub)
+    createShootingStar();
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+      const ss = shootingStars[i];
+      const tailX = ss.x - Math.cos(ss.angle) * ss.len;
+      const tailY = ss.y - Math.sin(ss.angle) * ss.len;
+
+      const grad = ctx.createLinearGradient(tailX, tailY, ss.x, ss.y);
+      grad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+      grad.addColorStop(1, glowColor);
+
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(tailX, tailY);
+      ctx.lineTo(ss.x, ss.y);
+      ctx.stroke();
+
+      ss.x += Math.cos(ss.angle) * ss.speed;
+      ss.y += Math.sin(ss.angle) * ss.speed;
+      ss.opacity -= 0.02;
+
+      if (ss.opacity <= 0 || ss.x > canvas.width || ss.y > canvas.height) {
+        shootingStars.splice(i, 1);
+      }
+    }
+
+    animFrameId = requestAnimationFrame(renderAtmosphere);
   }
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       cancelAnimationFrame(animFrameId);
     } else if (!isReducedMotion) {
-      renderParticles();
+      renderAtmosphere();
     }
   });
 
-  // 2. Audio Atmosphere Synthesis (Native Web Audio API)
+  // 2. Ambient Audio Atmosphere Synthesis (Ethereal Chord Web Audio API)
   function toggleAmbientSound() {
     if (!audioContext) {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -146,17 +192,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isSoundOn) {
       try {
-        ambientOsc = audioContext.createOscillator();
+        ambientOsc1 = audioContext.createOscillator();
+        ambientOsc2 = audioContext.createOscillator();
         ambientGain = audioContext.createGain();
-        ambientOsc.type = 'sine';
-        ambientOsc.frequency.setValueAtTime(110, audioContext.currentTime); // Gentle A2 drone
-        ambientGain.gain.setValueAtTime(0.001, audioContext.currentTime);
-        ambientGain.gain.exponentialRampToValueAtTime(0.04, audioContext.currentTime + 3);
 
-        ambientOsc.connect(ambientGain);
+        ambientOsc1.type = 'sine';
+        ambientOsc2.type = 'triangle';
+        ambientOsc1.frequency.setValueAtTime(110, audioContext.currentTime); // A2 drone
+        ambientOsc2.frequency.setValueAtTime(164.81, audioContext.currentTime); // E3 fifth harmony
+
+        ambientGain.gain.setValueAtTime(0.001, audioContext.currentTime);
+        ambientGain.gain.exponentialRampToValueAtTime(0.035, audioContext.currentTime + 3);
+
+        ambientOsc1.connect(ambientGain);
+        ambientOsc2.connect(ambientGain);
         ambientGain.connect(audioContext.destination);
-        ambientOsc.start();
-        showToast('Suara tenang diaktifkan');
+
+        ambientOsc1.start();
+        ambientOsc2.start();
+        showToast('Atmosfer suara hening diaktifkan 🎵');
       } catch (e) {
         console.debug('Audio error', e);
       }
@@ -164,7 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (ambientGain) {
         ambientGain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 1);
         setTimeout(() => {
-          if (ambientOsc) ambientOsc.stop();
+          if (ambientOsc1) ambientOsc1.stop();
+          if (ambientOsc2) ambientOsc2.stop();
         }, 1000);
       }
       showToast('Suara dinonaktifkan');
@@ -203,6 +258,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Update Scrubber Pills
+    scrubberPills.forEach((pill, pIdx) => {
+      pill.classList.toggle('active', pIdx === index);
+      if (pIdx === index) {
+        pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+
     // Update Cinematic Cards
     const cards = document.querySelectorAll('.cinematic-stage');
     cards.forEach((card, cIdx) => {
@@ -215,12 +278,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Update Prev / Next button states
+    if (prevBtn) {
+      prevBtn.innerHTML = index === 0 ? '‹ Ke Intro' : '‹ Mundur';
+    }
+    if (nextBtn) {
+      nextBtn.innerHTML = index === stagesData.length - 1 ? 'Selesai 🏁' : 'Lanjut ›';
+    }
+
     // Hash sync
     if (updateHistory && currentView === 'cinematic') {
       window.location.hash = `#tahap-${numPadded}`;
     }
 
-    // Scroll to top in cinematic
+    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -243,7 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Next / Prev stage navigation
   function nextStage() {
     if (currentStageIndex < stagesData.length - 1) {
       setStage(currentStageIndex + 1);
@@ -268,14 +338,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let vocabHtml = '';
     if (stage.vocabulary && stage.vocabulary.length > 0) {
       vocabHtml = `
-        <div class="mb-6 p-4 rounded-xl bg-slate-800/60 border border-slate-700">
-          <h4 class="text-xs uppercase tracking-wider font-extrabold text-amber-400 mb-3">📖 Kosakata & Istilah Arab</h4>
+        <div class="mb-6 p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80">
+          <h4 class="text-xs uppercase tracking-wider font-extrabold text-amber-400 mb-3 flex items-center gap-2">
+            <span>📖</span> Kosakata & Istilah Kunci
+          </h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             ${stage.vocabulary.map(v => `
-              <div class="p-2.5 rounded-lg bg-slate-900/50 border border-slate-700/60">
-                <div class="text-base font-bold text-amber-300 font-serif" dir="rtl">${v.ar}</div>
-                <div class="text-xs font-semibold text-slate-300">${v.latin}</div>
-                <div class="text-xs text-slate-400 mt-0.5">${v.meaning}</div>
+              <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800">
+                <div class="text-lg font-bold text-amber-300 font-serif mb-0.5" dir="rtl">${v.ar}</div>
+                <div class="text-xs font-bold text-slate-200">${v.latin}</div>
+                <div class="text-xs text-slate-400 mt-1">${v.meaning}</div>
               </div>
             `).join('')}
           </div>
@@ -286,9 +358,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let notesHtml = '';
     if (stage.scholarNotes && stage.scholarNotes.length > 0) {
       notesHtml = `
-        <div class="mb-6 p-4 rounded-xl bg-amber-950/30 border border-amber-600/40">
+        <div class="mb-6 p-4 rounded-2xl bg-amber-950/30 border border-amber-600/40">
           <div class="scholar-badge mb-2">⚖️ Catatan Ulama · Perbedaan Pendapat</div>
-          <p class="text-xs leading-relaxed text-amber-200/90 m-0">${stage.scholarNotes.join(' ')}</p>
+          <p class="text-xs leading-relaxed text-amber-200/95 m-0">${stage.scholarNotes.join(' ')}</p>
         </div>
       `;
     }
@@ -296,9 +368,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let lessonsHtml = '';
     if (stage.practicalLessons && stage.practicalLessons.length > 0) {
       lessonsHtml = `
-        <div class="mb-6 p-4 rounded-xl bg-emerald-950/30 border border-emerald-600/40">
-          <h4 class="text-xs uppercase tracking-wider font-extrabold text-emerald-400 mb-2">🌱 Pelajaran Praktis & Amal</h4>
-          <p class="text-xs leading-relaxed text-emerald-200/90 m-0">${stage.practicalLessons.join(' ')}</p>
+        <div class="mb-6 p-4 rounded-2xl bg-emerald-950/30 border border-emerald-600/40">
+          <h4 class="text-xs uppercase tracking-wider font-extrabold text-emerald-400 mb-2 flex items-center gap-2">
+            <span>🌱</span> Pelajaran Praktis & Amal Nyata
+          </h4>
+          <p class="text-xs leading-relaxed text-emerald-200/95 m-0">${stage.practicalLessons.join(' ')}</p>
         </div>
       `;
     }
@@ -309,22 +383,24 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="text-xs font-mono font-bold tracking-widest text-amber-400">TAHAP ${String(stage.id).padStart(2, '0')} / 12</span>
           <h3 class="text-xl font-black text-white mt-1">${stage.labelId}</h3>
         </div>
-        <span class="text-xl font-bold font-serif text-slate-400" dir="rtl">${stage.labelAr}</span>
+        <span class="text-2xl font-bold font-serif text-amber-300/80" dir="rtl">${stage.labelAr}</span>
       </div>
 
       <!-- Ayat & Terjemah Lengkap -->
-      <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-700/80 mb-6 text-center">
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-amber-500/30 mb-6 text-center shadow-lg">
         <div class="arabic-text text-2xl text-amber-100 mb-3" dir="rtl">${stage.arabic}</div>
         <p class="text-sm italic text-slate-300 leading-relaxed m-0 mb-3">"${stage.translation}"</p>
-        <div class="text-xs font-semibold text-amber-400/90">
+        <div class="text-xs font-semibold text-amber-400">
           ${stage.sources.map(s => `${s.ref} (${s.translationBy || 'Sahih'})`).join(' · ')}
         </div>
       </div>
 
       <!-- Penjelasan Mendalam -->
-      <div class="mb-6">
-        <h4 class="text-xs uppercase tracking-wider font-extrabold text-slate-400 mb-3">Tafsir & Penjelasan</h4>
-        ${stage.explanation.map(p => `<p class="text-sm text-slate-300 leading-relaxed mb-3">${p}</p>`).join('')}
+      <div class="mb-6 space-y-3">
+        <h4 class="text-xs uppercase tracking-wider font-extrabold text-slate-400 mb-2 flex items-center gap-2">
+          <span>📜</span> Tafsir & Penjelasan
+        </h4>
+        ${stage.explanation.map(p => `<p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${p}</p>`).join('')}
       </div>
 
       ${vocabHtml}
@@ -333,8 +409,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <!-- Bacaan Lanjutan -->
       ${stage.furtherReading && stage.furtherReading.length > 0 ? `
-        <div class="pt-4 border-t border-slate-800 text-xs text-slate-400">
-          <strong>Rujukan Lanjutan:</strong> ${stage.furtherReading.map(r => r.ref).join(', ')}
+        <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center gap-2">
+          <span class="font-bold text-amber-400">Rujukan Lanjutan:</span>
+          <span>${stage.furtherReading.map(r => r.ref).join(', ')}</span>
         </div>
       ` : ''}
     `;
@@ -360,24 +437,23 @@ document.addEventListener('DOMContentLoaded', () => {
     quizAnsweredCount = 0;
 
     quizListContainer.innerHTML = quizData.map((q, idx) => `
-      <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700 mb-5 quiz-item" data-idx="${idx}">
+      <div class="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/80 mb-5 quiz-item" data-idx="${idx}">
         <div class="flex items-center gap-2 mb-2">
-          <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300">Tahap ${String(q.stage).padStart(2, '0')}</span>
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Tahap ${String(q.stage).padStart(2, '0')}</span>
           <span class="text-xs text-slate-400 font-semibold">Soal ${idx + 1} dari 12</span>
         </div>
         <p class="text-sm font-bold text-white mb-3">${q.question}</p>
         <div class="space-y-2">
           ${q.options.map((opt, optIdx) => `
-            <button class="w-full text-left p-3 rounded-lg bg-slate-900 border border-slate-700 hover:border-amber-400 text-xs text-slate-200 transition-colors quiz-opt-btn" data-opt="${optIdx}">
+            <button class="w-full text-left p-3 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-amber-400 text-xs text-slate-200 transition-colors quiz-opt-btn" data-opt="${optIdx}">
               ${String.fromCharCode(65 + optIdx)}. ${opt}
             </button>
           `).join('')}
         </div>
-        <div class="quiz-feedback hidden mt-3 p-3 rounded-lg text-xs leading-relaxed"></div>
+        <div class="quiz-feedback hidden mt-3 p-3 rounded-xl text-xs leading-relaxed"></div>
       </div>
     `).join('');
 
-    // Attach listeners
     quizListContainer.querySelectorAll('.quiz-item').forEach(item => {
       const qIdx = parseInt(item.dataset.idx, 10);
       const q = quizData[qIdx];
@@ -394,17 +470,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
           feedback.classList.remove('hidden');
           if (chosen === q.answer) {
-            btn.classList.remove('bg-slate-900', 'border-slate-700');
+            btn.classList.remove('bg-slate-900', 'border-slate-700/80');
             btn.classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
-            feedback.classList.add('bg-emerald-950/60', 'border', 'border-emerald-500/40', 'text-emerald-300');
+            feedback.classList.add('bg-emerald-950/70', 'border', 'border-emerald-500/50', 'text-emerald-300');
             feedback.innerHTML = `<strong>Benar! ✨</strong> ${q.explanation}`;
             userQuizScore++;
           } else {
-            btn.classList.remove('bg-slate-900', 'border-slate-700');
+            btn.classList.remove('bg-slate-900', 'border-slate-700/80');
             btn.classList.add('bg-rose-950', 'border-rose-500', 'text-rose-200');
-            // Highlight correct
             buttons[q.answer].classList.add('border-emerald-500', 'bg-emerald-950/80', 'text-emerald-200');
-            feedback.classList.add('bg-rose-950/60', 'border', 'border-rose-500/40', 'text-rose-300');
+            feedback.classList.add('bg-rose-950/70', 'border', 'border-rose-500/50', 'text-rose-300');
             feedback.innerHTML = `<strong>Kurang tepat.</strong> ${q.explanation}`;
           }
 
@@ -422,12 +497,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!banner) return;
     banner.classList.remove('hidden');
     banner.innerHTML = `
-      <div class="p-5 rounded-2xl bg-amber-500/20 border-2 border-amber-500/60 text-center">
-        <h4 class="text-xl font-black text-amber-300 mb-1">Skor Kamu: ${userQuizScore} / 12</h4>
-        <p class="text-xs text-slate-300 mb-3 leading-relaxed">
-          ${userQuizScore >= 10 ? 'Masya Allah! Pemahamanmu tentang 12 tahap perjalanan sangat baik.' : 'Alhamdulillah, perjalanan belajar yang bagus! Coba baca kembali tahap-tahap yang belum tepat.'}
+      <div class="p-6 rounded-2xl bg-amber-500/20 border-2 border-amber-500/60 text-center">
+        <h4 class="text-2xl font-black text-amber-300 mb-1">Skor Kamu: ${userQuizScore} / 12</h4>
+        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+          ${userQuizScore >= 10 ? 'Masya Allah! Pemahamanmu tentang 12 tahap perjalanan akhirat sangat baik.' : 'Alhamdulillah, perjalanan belajar yang bagus! Coba pelajari kembali tahap-tahap yang belum tepat.'}
         </p>
-        <button id="retry-quiz-btn" class="px-4 py-2 bg-amber-500 text-slate-950 font-extrabold text-xs rounded-xl hover:bg-amber-400">
+        <button id="retry-quiz-btn" class="px-5 py-2.5 bg-amber-500 text-slate-950 font-black text-xs rounded-xl hover:bg-amber-400">
           Ulangi Kuis
         </button>
       </div>
@@ -435,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('retry-quiz-btn')?.addEventListener('click', renderQuiz);
   }
 
-  // 6. Glossary List
+  // 6. Glossary
   function renderGlossary(filter = '') {
     const listEl = document.getElementById('glossary-items-list');
     if (!listEl) return;
@@ -447,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     listEl.innerHTML = filtered.map(g => `
-      <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-slate-500 transition-colors">
+      <div class="p-4 rounded-2xl bg-slate-800/60 border border-slate-700 hover:border-amber-500/50 transition-colors">
         <div class="flex items-center justify-between mb-1.5">
           <div class="flex items-center gap-2">
             <span class="text-base font-extrabold text-white">${g.term}</span>
@@ -456,14 +531,14 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="text-xl font-serif text-amber-300" dir="rtl">${g.ar}</span>
         </div>
         <p class="text-xs text-slate-300 leading-relaxed m-0 mb-2">${g.meaning}</p>
-        <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-700/60 text-slate-400">
+        <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-700/60 text-amber-400">
           Relevan di Tahap ${String(g.stage).padStart(2, '0')}
         </span>
       </div>
     `).join('');
   }
 
-  // 7. Interactive Checklist "Bekal dari Tahap 3" (LocalStorage)
+  // 7. Interactive Checklist "Bekal dari Tahap 3"
   function initChecklist() {
     const checklistBoxes = document.querySelectorAll('.bekal-checkbox');
     checklistBoxes.forEach((cb, idx) => {
@@ -479,13 +554,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 8. Event Listeners
-  // Nav buttons
   if (prevBtn) prevBtn.addEventListener('click', prevStage);
   if (nextBtn) nextBtn.addEventListener('click', nextStage);
 
   progressDots.forEach(dot => {
     dot.addEventListener('click', () => {
       const idx = parseInt(dot.dataset.stage, 10);
+      setStage(idx);
+    });
+  });
+
+  scrubberPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const idx = parseInt(pill.dataset.stage, 10);
       setStage(idx);
     });
   });
@@ -586,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const full = `${ar}\n\n"${tr}"\n(${src})`;
 
       navigator.clipboard.writeText(full).then(() => {
-        showToast('Teks Arab & terjemah berhasil disalin! 📋');
+        showToast('Teks Arab & dalil berhasil disalin! 📋');
       });
     });
   });
@@ -631,12 +712,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const deltaY = e.changedTouches[0].clientY - touchStartY;
 
     if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 50) {
-      if (deltaX < 0) nextStage(); // swipe left -> next
-      else prevStage(); // swipe right -> prev
+      if (deltaX < 0) nextStage();
+      else prevStage();
     }
   }, { passive: true });
 
-  // 9. Initial Hash Check
+  // Initial Hash Check
   function checkInitialHash() {
     const hash = window.location.hash;
     if (hash.startsWith('#tahap-')) {

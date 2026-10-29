@@ -1,4 +1,4 @@
-/* Journey 12 Stages — Immersive Dark Styles */
+/* Journey 12 Stages — Immersive Celestial & Islamic Neo-Spiritual Styles */
 
 @import "tailwindcss";
 
@@ -11,7 +11,7 @@
   --gold: #f59e0b;
   --gold-glow: rgba(245, 158, 11, 0.4);
   --pin-orange: #ff7849;
-  --arabic-size: 2.1rem;
+  --arabic-size: 2.2rem;
 }
 
 body.journey-body {
@@ -29,19 +29,37 @@ body.journey-body {
 .journey-bg {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 50% 20%, var(--sky-bottom) 0%, var(--sky-top) 80%);
+  background: radial-gradient(circle at 50% 15%, var(--sky-bottom) 0%, var(--sky-top) 85%);
   z-index: 0;
   pointer-events: none;
   transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Ambient canvas stars */
+/* Subtle rotating Islamic geometric mandala in background */
+.islamic-mandala-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: min(850px, 95vw);
+  height: min(850px, 95vw);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  animation: slowRotate 180s linear infinite;
+}
+
+@keyframes slowRotate {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Ambient canvas stars & dust */
 #journey-canvas {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -49,11 +67,11 @@ body.journey-body {
 .arabic-text {
   font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif;
   font-size: var(--arabic-size);
-  line-height: 2.2;
+  line-height: 2.3;
   direction: rtl;
   text-align: center;
   color: #fff;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.45), 0 0 50px var(--glow);
   letter-spacing: 0;
   word-spacing: 4px;
 }
@@ -62,92 +80,138 @@ body.journey-body {
 .you-are-here-pin {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--pin-orange);
+  gap: 7px;
+  background: linear-gradient(135deg, #ff7849, #ea580c);
   color: #ffffff;
-  padding: 4px 14px;
+  padding: 6px 16px;
   border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  box-shadow: 0 0 20px rgba(255, 120, 73, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.4);
-  animation: pinBob 2s ease-in-out infinite;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 25px rgba(255, 120, 73, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  animation: pinBob 2.4s ease-in-out infinite;
 }
 
 @keyframes pinBob {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
+  50% { transform: translateY(-8px); }
 }
 
 /* 12-dot Progress Bar */
 .progress-trail {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .trail-dot {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  position: relative;
 }
 
 .trail-dot:hover {
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(1.3);
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.35);
 }
 
 .trail-dot.passed {
   background: #f59e0b;
   border-color: #f59e0b;
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
 }
 
 .trail-dot.active {
   background: #ffffff;
   border-color: #f59e0b;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.9), 0 0 25px rgba(245, 158, 11, 0.8);
-  transform: scale(1.5);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.9), 0 0 30px rgba(245, 158, 11, 0.9);
+  transform: scale(1.6);
 }
+
+/* Stage Holy Card (Glassmorphism + Islamic Framing) */
+.celestial-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 24px 20px;
+  transition: border-color 0.8s ease, box-shadow 0.8s ease;
+}
+
+@media (min-width: 640px) {
+  .celestial-card {
+    padding: 32px 36px;
+  }
+}
+
+.celestial-card:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.15);
+}
+
+/* Decorative Corner Accents */
+.corner-ornament {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(245, 158, 11, 0.5);
+  pointer-events: none;
+}
+.corner-top-left { top: 10px; left: 10px; border-top: 2px solid; border-left: 2px solid; }
+.corner-top-right { top: 10px; right: 10px; border-top: 2px solid; border-right: 2px solid; }
+.corner-bottom-left { bottom: 10px; left: 10px; border-bottom: 2px solid; border-left: 2px solid; }
+.corner-bottom-right { bottom: 10px; right: 10px; border-bottom: 2px solid; border-right: 2px solid; }
 
 /* Stage Scene Illustration Container */
 .scene-visual-wrapper {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  height: 220px;
-  margin: 0 auto;
+  max-width: 620px;
+  height: 250px;
+  margin: 0 auto 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@media (min-width: 640px) {
+  .scene-visual-wrapper {
+    height: 290px;
+  }
+}
+
 .scene-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 15px var(--glow));
+  filter: drop-shadow(0 0 20px var(--glow));
+  overflow: visible;
 }
 
 /* Cinematic Stage Container */
 .cinematic-stage {
-  min-height: calc(100dvh - 140px);
+  min-height: calc(100dvh - 160px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 16px 24px;
+  justify-content: center;
+  padding: 10px 16px 20px;
   position: relative;
   z-index: 5;
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1);
 }
 
 .cinematic-stage.stage-hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateY(20px) scale(0.98);
+  transform: translateY(24px) scale(0.97);
   position: absolute;
   inset: 0;
 }
@@ -164,10 +228,10 @@ body.journey-body {
   position: fixed;
   inset: auto 0 0 0;
   max-height: 85dvh;
-  background: #0f172a;
-  border-top: 2px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px 24px 0 0;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+  background: #090e1a;
+  border-top: 2px solid rgba(245, 158, 11, 0.3);
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.9);
   z-index: 60;
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -178,11 +242,11 @@ body.journey-body {
 @media (min-width: 1024px) {
   .deep-dive-panel {
     inset: 0 0 0 auto;
-    width: 480px;
+    width: 520px;
     max-height: 100dvh;
     border-top: none;
-    border-left: 2px solid rgba(255, 255, 255, 0.15);
-    border-radius: 24px 0 0 24px;
+    border-left: 2px solid rgba(245, 158, 11, 0.3);
+    border-radius: 28px 0 0 28px;
     transform: translateX(100%);
     transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -202,8 +266,9 @@ body.journey-body {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 55;
   opacity: 0;
   pointer-events: none;
@@ -223,15 +288,65 @@ body.journey-body {
   background: rgba(245, 158, 11, 0.15);
   border: 1px solid rgba(245, 158, 11, 0.4);
   color: #fbbf24;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 700;
 }
 
+/* Floating Stage Quick Scrubber Pills */
+.stage-scrubber {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 12px;
+  scrollbar-width: none;
+}
+.stage-scrubber::-webkit-scrollbar {
+  display: none;
+}
+
+.scrubber-pill {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.scrubber-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.scrubber-pill.active {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #0f172a;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+}
+
+/* Glow Pulses & Animations */
+@keyframes celestialFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
+}
+
+.celestial-float {
+  animation: celestialFloat 4s ease-in-out infinite;
+}
+
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-  .you-are-here-pin {
+  .you-are-here-pin,
+  .islamic-mandala-bg,
+  .celestial-float {
     animation: none;
   }
   .cinematic-stage {

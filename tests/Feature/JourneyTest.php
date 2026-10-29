@@ -20,3 +20,4 @@ class JourneyTest extends TestCase
         $response->assertSee('QANTHARAH &amp; SURGA', false);
     }
 }
+
