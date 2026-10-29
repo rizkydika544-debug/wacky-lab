@@ -1,0 +1,244 @@
+/* Journey 12 Stages — Immersive Dark Styles */
+
+@import "tailwindcss";
+
+:root {
+  --sky-top: #070b24;
+  --sky-bottom: #101a4a;
+  --glow: #cfe0ff;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --gold: #f59e0b;
+  --gold-glow: rgba(245, 158, 11, 0.4);
+  --pin-orange: #ff7849;
+  --arabic-size: 2.1rem;
+}
+
+body.journey-body {
+  margin: 0;
+  padding: 0;
+  background: var(--sky-top);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 100dvh;
+}
+
+/* Background Atmosphere */
+.journey-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, var(--sky-bottom) 0%, var(--sky-top) 80%);
+  z-index: 0;
+  pointer-events: none;
+  transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ambient canvas stars */
+#journey-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Typography */
+.arabic-text {
+  font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif;
+  font-size: var(--arabic-size);
+  line-height: 2.2;
+  direction: rtl;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+  letter-spacing: 0;
+  word-spacing: 4px;
+}
+
+/* You Are Here Pin */
+.you-are-here-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--pin-orange);
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 20px rgba(255, 120, 73, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  animation: pinBob 2s ease-in-out infinite;
+}
+
+@keyframes pinBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* 12-dot Progress Bar */
+.progress-trail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trail-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.trail-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.3);
+}
+
+.trail-dot.passed {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.trail-dot.active {
+  background: #ffffff;
+  border-color: #f59e0b;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.9), 0 0 25px rgba(245, 158, 11, 0.8);
+  transform: scale(1.5);
+}
+
+/* Stage Scene Illustration Container */
+.scene-visual-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 220px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 15px var(--glow));
+}
+
+/* Cinematic Stage Container */
+.cinematic-stage {
+  min-height: calc(100dvh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 16px 24px;
+  position: relative;
+  z-index: 5;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.cinematic-stage.stage-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.98);
+  position: absolute;
+  inset: 0;
+}
+
+.cinematic-stage.stage-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  position: relative;
+}
+
+/* Deep Dive Sliding Drawer */
+.deep-dive-panel {
+  position: fixed;
+  inset: auto 0 0 0;
+  max-height: 85dvh;
+  background: #0f172a;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+  z-index: 60;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  padding: 24px 20px 40px;
+}
+
+@media (min-width: 1024px) {
+  .deep-dive-panel {
+    inset: 0 0 0 auto;
+    width: 480px;
+    max-height: 100dvh;
+    border-top: none;
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px 0 0 24px;
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+.deep-dive-panel.open {
+  transform: translateY(0);
+}
+
+@media (min-width: 1024px) {
+  .deep-dive-panel.open {
+    transform: translateX(0);
+  }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 55;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Scholar Note Badge */
+.scholar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .you-are-here-pin {
+    animation: none;
+  }
+  .cinematic-stage {
+    transition: opacity 0.25s linear;
+    transform: none !important;
+  }
+  .deep-dive-panel {
+    transition: transform 0.2s ease;
+  }
+}

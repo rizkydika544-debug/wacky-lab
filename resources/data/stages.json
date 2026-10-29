@@ -1,0 +1,446 @@
+[
+  {
+    "id": 1,
+    "slug": "sebelum-lahir",
+    "labelId": "SEBELUM LAHIR",
+    "labelAr": "الْمِيثَاق / عَالَمُ الأَرْوَاح",
+    "transliteration": "al-mītsāq / 'ālamul arwāh",
+    "mood": "bintang",
+    "headline": "Sebelum lahir, anak cucu Adam ditanya: 'Bukankah Aku ini Tuhanmu?' Mereka menjawab: 'Betul, kami bersaksi.'",
+    "showYouAreHere": false,
+    "arabic": "أَلَسْتُ بِرَبِّكُمْ ۖ قَالُوا بَلَىٰ ۛ شَهِدْنَا",
+    "translation": "Bukankah Aku ini Tuhanmu? Mereka menjawab: 'Betul (Engkau Tuhan kami), kami bersaksi.'",
+    "sources": [
+      { "type": "quran", "ref": "QS. Al-A'raf 7:172", "translationBy": "Kemenag", "verified": true }
+    ],
+    "explanation": [
+      "Ayat ini menceritakan peristiwa al-mitsāq, yaitu perjanjian dan kesaksian seluruh keturunan Adam bahwa Allah adalah Tuhan mereka.",
+      "Pesannya sangat dalam: pengakuan kepada Tuhan bukan hal yang 'baru dipelajari', melainkan menyatu dengan fitrah penciptaan manusia. Karena itu di hari akhir kelak, tidak ada jiwa yang dapat beralasan bahwa ia lalai dari pengenalan terhadap Sang Khalik."
+    ],
+    "vocabulary": [
+      { "ar": "الْمِيثَاق", "latin": "al-mītsāq", "meaning": "perjanjian / ikrar teguh" },
+      { "ar": "الْفِطْرَة", "latin": "al-fithrah", "meaning": "naluri asal mengenal kebenaran dan Tuhan" }
+    ],
+    "scholarNotes": [
+      "Bagaimana terjadinya peristiwa pengambilan janji ini, para ulama memiliki perbedaan penjelasan: sebagian memahaminya sebagai peristiwa hakiki saat penciptaan benih manusia, sebagian lain memahaminya sebagai pengibaratan fitrah akal dan bukti penciptaan yang tertanam dalam diri setiap manusia."
+    ],
+    "practicalLessons": [
+      "Rasa ingin mencari makna hidup dan bertuhan adalah fitrah alami. Rawat fitrah tersebut dengan menuntut ilmu yang benar dan beribadah."
+    ],
+    "furtherReading": [
+      { "type": "tafsir", "ref": "Tafsir Ibnu Katsir surah Al-A'raf 7:172" }
+    ],
+    "scene": "Scene01",
+    "skyTop": "#070b24",
+    "skyBottom": "#101a4a",
+    "glow": "#cfe0ff"
+  },
+  {
+    "id": 2,
+    "slug": "rahim",
+    "labelId": "RAHIM",
+    "labelAr": "الرَّحِم",
+    "transliteration": "ar-rahim",
+    "mood": "hangat",
+    "headline": "Di perut ibu, kamu dibentuk kejadian demi kejadian, dalam tiga kegelapan.",
+    "showYouAreHere": false,
+    "arabic": "يَخْلُقُكُمْ فِي بُطُونِ أُمَّهَاتِكُمْ خَلْقًا مِّن بَعْدِ خَلْقٍ فِي ظُلُمَاتٍ ثَلَاثٍ",
+    "translation": "Dia menjadikan kamu dalam perut ibumu kejadian demi kejadian dalam tiga kegelapan.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Az-Zumar 39:6", "translationBy": "Kemenag", "verified": true }
+    ],
+    "explanation": [
+      "Ayat ini menggambarkan proses biologis penciptaan manusia secara bertahap dalam rahim ibu: dari air mani, segumpal darah, segumpal daging, hingga ditiupkan ruh.",
+      "Tidak ada seorang pun manusia yang memilih kapan ia lahir, siapa orang tuanya, atau bagaimana rupa fisiknya. Semuanya murni anugerah dari Sang Pencipta."
+    ],
+    "vocabulary": [
+      { "ar": "الرَّحِم", "latin": "ar-rahim", "meaning": "kandungan / tempat tumbuhnya janin" },
+      { "ar": "ظُلُمَاتٍ ثَلَاثٍ", "latin": "zhulumātin tsalāts", "meaning": "tiga kegelapan (perut, rahim, selaput janin)" }
+    ],
+    "scholarNotes": [
+      "Para mufasir umumnya menafsirkan 'tiga kegelapan' sebagai gelapnya dinding perut, gelapnya rahim, dan gelapnya selaput plasenta yang menyelubungi janin (menurut penafsiran masyhur)."
+    ],
+    "practicalLessons": [
+      "Awal kehidupan adalah anugerah murni tanpa bayaran. Jadikan ini pengingat untuk senantiasa rendah hati dan berbakti kepada kedua orang tua."
+    ],
+    "furtherReading": [
+      { "type": "quran", "ref": "QS. Al-Mu'minun 23:12–14" }
+    ],
+    "scene": "Scene02",
+    "skyTop": "#1a0710",
+    "skyBottom": "#3a0f1c",
+    "glow": "#ffb4a0"
+  },
+  {
+    "id": 3,
+    "slug": "dunia",
+    "labelId": "DUNIA",
+    "labelAr": "الدُّنْيَا",
+    "transliteration": "ad-dunyā",
+    "mood": "senja",
+    "headline": "Mati dan hidup diciptakan untuk menguji: siapa yang paling baik amalnya.",
+    "showYouAreHere": true,
+    "arabic": "لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا",
+    "translation": "Untuk menguji kamu, siapa di antara kamu yang lebih baik amalnya.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Al-Mulk 67:2", "translationBy": "Kemenag", "verified": true }
+    ],
+    "explanation": [
+      "Dunia adalah satu-satunya tahap tempat amal perbuatan bisa ditambah, diperbaiki, dan diikhtiarkan.",
+      "Perhatikan redaksi ayat: Allah tidak menyebut 'paling banyak amalnya', melainkan 'paling baik amalnya' (ahsanu 'amala).",
+      "Ulama salaf Fudhail bin 'Iyadh menerangkan bahwa amal terbaik adalah yang paling ikhlas niatnya dan paling benar tata caranya sesuai tuntunan sunnah."
+    ],
+    "vocabulary": [
+      { "ar": "الدُّنْيَا", "latin": "ad-dunyā", "meaning": "kehidupan yang dekat / rendah sebelum akhirat" },
+      { "ar": "أَحْسَنُ عَمَلًا", "latin": "ahsanu 'amalā", "meaning": "paling ikhlas dan paling benar tuntunannya" }
+    ],
+    "scholarNotes": [
+      "Penjelasan Fudhail bin 'Iyadh dinukil dalam banyak kitab tafsir muktabar: 'Amal jika ikhlas tapi tidak benar, tidak diterima. Jika benar tapi tidak ikhlas, tidak diterima; hingga ikhlas karena Allah dan benar mengikuti sunnah.'"
+    ],
+    "practicalLessons": [
+      "Tanyakan pada diri setiap hari: Apakah niatku tulus? Apakah caraku benar? Mulailah dari amal-amal kecil namun istiqamah."
+    ],
+    "furtherReading": [
+      { "type": "quran", "ref": "QS. Al-Qiyamah 75:36" }
+    ],
+    "scene": "Scene03",
+    "skyTop": "#2a1f4a",
+    "skyBottom": "#f2a05a",
+    "glow": "#ffd89a"
+  },
+  {
+    "id": 4,
+    "slug": "kubur-barzakh",
+    "labelId": "KUBUR / BARZAKH",
+    "labelAr": "الْقَبْر / الْبَرْزَخ",
+    "transliteration": "al-qabr / al-barzakh",
+    "mood": "sunyi",
+    "headline": "Di balik mereka ada dinding pemisah sampai hari kebangkitan. Amal terputus kecuali tiga.",
+    "showYouAreHere": true,
+    "arabic": "وَمِن وَرَائِهِم بَرْزَخٌ إِلَىٰ يَوْمِ يُبْعَثُونَ",
+    "translation": "Dan di hadapan mereka ada barzakh (dinding pemisah) sampai hari mereka dibangkitkan.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Al-Mu'minun 23:99–100", "translationBy": "Kemenag", "verified": true },
+      { "type": "hadits", "ref": "HR. Muslim no. 1631", "translationBy": "Resmi", "verified": true }
+    ],
+    "explanation": [
+      "Barzakh secara bahasa bermakna sekat atau pemisah, yaitu alam penantian antara kehidupan dunia fana dan kebangkitan kiamat.",
+      "Di alam ini kesempatan kedua sudah tertutup rapat. Pintu amal ditutup kecuali tiga hal yang pahalanya terus mengalir: sedekah jariyah, ilmu yang bermanfaat, dan anak saleh yang mendoakan orang tuanya."
+    ],
+    "vocabulary": [
+      { "ar": "الْبَرْزَخ", "latin": "al-barzakh", "meaning": "dinding pemisah antara alam dunia dan akhirat" },
+      { "ar": "صَدَقَةٌ جَارِيَةٌ", "latin": "shadaqah jāriyah", "meaning": "sedekah yang manfaatnya terus mengalir" }
+    ],
+    "scholarNotes": [
+      "Rincian pertanyaan malaikat (Munkar dan Nakir) serta nikmat atau siksa kubur adalah perkara gaib yang ditetapkan berdasarkan dalil-dalil sahih (seperti HR. Abu Dawud no. 4753)."
+    ],
+    "practicalLessons": [
+      "Bangun investasi pahala mengalir sejak di tahap dunia: wakaf, membagikan ilmu bermanfaat, dan mendidik diri serta keluarga."
+    ],
+    "furtherReading": [
+      { "type": "hadits", "ref": "HR. Abu Dawud no. 4753" }
+    ],
+    "scene": "Scene04",
+    "skyTop": "#0b0818",
+    "skyBottom": "#2b1530",
+    "glow": "#e8b57a"
+  },
+  {
+    "id": 5,
+    "slug": "sangkakala",
+    "labelId": "SANGKAKALA",
+    "labelAr": "الصُّور",
+    "transliteration": "ash-shūr",
+    "mood": "getaran",
+    "headline": "Ditiup: semua mati kecuali yang dikehendaki Allah. Ditiup lagi: semua serentak bangkit.",
+    "showYouAreHere": false,
+    "arabic": "وَنُفِخَ فِي الصُّورِ فَصَعِقَ مَن فِي السَّمَاوَاتِ وَمَن فِي الْأَرْضِ إِلَّا مَن شَاءَ اللَّهُ ۖ ثُمَّ نُفِخَ فِيهِ أُخْرَىٰ فَإِذَا هُمْ قِيَامٌ يَنظُرُونَ",
+    "translation": "Dan ditiuplah sangkakala, maka matilah siapa yang di langit dan di bumi kecuali siapa yang dikehendaki Allah. Kemudian ditiup sangkakala itu sekali lagi maka tiba-tiba mereka bangun menunggu.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Az-Zumar 39:68", "translationBy": "Kemenag", "verified": true }
+    ],
+    "explanation": [
+      "Ash-Shūr adalah terompet besar sangkakala yang ditiup oleh Malaikat Israfil atas perintah Allah.",
+      "Ayat ini secara jelas menegaskan peristiwa tiupan pertama yang mematikan seluruh makhluk dan tiupan kedua yang membangkitkan seluruh manusia untuk menghadap hisab."
+    ],
+    "vocabulary": [
+      { "ar": "الصُّور", "latin": "ash-shūr", "meaning": "terompet sangkakala hari kiamat" },
+      { "ar": "فَصَعِقَ", "latin": "fasha'iqa", "meaning": "maka jatuh pingsan / mati seketika" }
+    ],
+    "scholarNotes": [
+      "Sebagian ulama merinci adanya tiga kali tiupan (tiupan kejutan nafkhah al-faza', tiupan kematian nafkhah ash-sha'aq, dan tiupan kebangkitan nafkhah al-ba'ts) berdasarkan riwayat lain, sementara jumhur ulama merangkumnya dalam dua tiupan utama."
+    ],
+    "practicalLessons": [
+      "Kiamat dan ajal datang tanpa pemberitahuan. Jangan menunda taubat dan amal saleh sampai esok hari."
+    ],
+    "furtherReading": [
+      { "type": "quran", "ref": "QS. Al-Haqqah 69:13–16" }
+    ],
+    "scene": "Scene05",
+    "skyTop": "#05050b",
+    "skyBottom": "#0d0a1a",
+    "glow": "#ffe9b0"
+  },
+  {
+    "id": 6,
+    "slug": "padang-mahsyar",
+    "labelId": "PADANG MAHSYAR",
+    "labelAr": "الْمَحْشَر",
+    "transliteration": "al-mahsyar",
+    "mood": "terik",
+    "headline": "Semua manusia dikumpulkan di satu tanah lapang putih bersih. Matahari didekatkan.",
+    "showYouAreHere": false,
+    "arabic": "يُحْشَرُ النَّاسُ يَوْمَ الْقِيَامَةِ عَلَى أَرْضٍ بَيْضَاءَ عَفْرَاءَ",
+    "translation": "Manusia dihimpunkan pada hari kiamat di atas bumi yang putih kemerah-merahan (seperti roti bundar bersih).",
+    "sources": [
+      { "type": "hadits", "ref": "HR. Bukhari no. 6521 & Muslim no. 2790", "translationBy": "Resmi", "verified": true }
+    ],
+    "explanation": [
+      "Mahsyar adalah tempat berkumpulnya seluruh umat manusia dari generasi Nabi Adam hingga manusia terakhir di akhir zaman.",
+      "Di hari yang sangat terik itu, manusia bermandikan keringat sesuai kadar dosanya, dan orang-orang mencari tempat bernaung dari dahsyatnya terik matahari."
+    ],
+    "vocabulary": [
+      { "ar": "الْمَحْشَر", "latin": "al-mahsyar", "meaning": "tempat berkumpulnya seluruh makhluk" },
+      { "ar": "صَعِيدٍ وَاحِدٍ", "latin": "sha'īdin wāhid", "meaning": "satu hamparan tanah lapang luas" }
+    ],
+    "scholarNotes": [
+      "Hadis sahih menyebut ada 7 golongan manusia yang mendapatkan naungan istimewa di bawah Arsy Allah saat tidak ada naungan lain (HR. Bukhari no. 660, HR. Muslim no. 1031)."
+    ],
+    "practicalLessons": [
+      "Jadilah insan yang berhak atas naungan Allah: pemuda taat, bersedekah secara tersembunyi, adil, dan saling mencintai karena Allah."
+    ],
+    "furtherReading": [
+      { "type": "hadits", "ref": "HR. Bukhari no. 660 (Tujuh Golongan Naungan)" }
+    ],
+    "scene": "Scene06",
+    "skyTop": "#3b1a0c",
+    "skyBottom": "#e0883a",
+    "glow": "#fff0c8"
+  },
+  {
+    "id": 7,
+    "slug": "syafaat",
+    "labelId": "SYAFAAT",
+    "labelAr": "الشَّفَاعَة",
+    "transliteration": "asy-syafā'ah",
+    "mood": "emas",
+    "headline": "Nabi demi nabi berkata: 'Diriku, diriku.' Hingga Nabi Muhammad ﷺ diizinkan memberi syafaat.",
+    "showYouAreHere": false,
+    "arabic": "مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ",
+    "translation": "Tiada yang dapat memberi syafaat di sisi Allah tanpa izin-Nya.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Al-Baqarah 2:255", "translationBy": "Kemenag", "verified": true },
+      { "type": "hadits", "ref": "HR. Bukhari no. 4712 & Muslim no. 194", "translationBy": "Resmi", "verified": true }
+    ],
+    "explanation": [
+      "Di padang mahsyar yang mencekam, manusia memohon pertolongan kepada para nabi (Adam, Nuh, Ibrahim, Musa, dan Isa 'alaihimussalam) agar hisab segera dimulai.",
+      "Semua nabi merasa tidak berwenang, hingga sampailah kepada Rasulullah Muhammad ﷺ yang bersujud di bawah Arsy dan Allah mengizinkannya memberi syafaat agung (al-Maqam al-Mahmud)."
+    ],
+    "vocabulary": [
+      { "ar": "الشَّفَاعَة", "latin": "asy-syafā'ah", "meaning": "perantaraan pertolongan dengan izin Allah" },
+      { "ar": "الشَّفَاعَةُ الْعُظْمَى", "latin": "asy-syafā'atul 'uzhmā", "meaning": "syafaat agung pembuka hisab" }
+    ],
+    "scholarNotes": [
+      "Syafaat memiliki syarat mutlak: ridha Allah terhadap orang yang disyafaati dan izin Allah bagi yang memberi syafaat. Syafaat bukan jalan pintas meninggalkan amal, melainkan anugerah rahmat Allah bagi ahli tauhid."
+    ],
+    "practicalLessons": [
+      "Perbanyak shalawat, hidupkan sunnah Nabi ﷺ, dan jaga ketauhidan agar kelak layak memperoleh syafaat beliau."
+    ],
+    "furtherReading": [
+      { "type": "hadits", "ref": "HR. Bukhari no. 3340" }
+    ],
+    "scene": "Scene07",
+    "skyTop": "#150f1f",
+    "skyBottom": "#3a2a2a",
+    "glow": "#ffd36b"
+  },
+  {
+    "id": 8,
+    "slug": "catatan-timbangan",
+    "labelId": "CATATAN & TIMBANGAN",
+    "labelAr": "الْكِتَاب وَالْمِيزَان",
+    "transliteration": "al-kitāb wal-mīzān",
+    "mood": "keadilan",
+    "headline": "Catatan amal diterima di tangan kanan atau kiri. Seberat biji sawi pun ditimbang adil.",
+    "showYouAreHere": false,
+    "arabic": "وَإِن كَانَ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ أَتَيْنَا بِهَا ۗ وَكَفَىٰ بِنَا حَاسِبِينَ",
+    "translation": "Dan jika ada amalan seberat biji sawi pun niscaya Kami mendatangkannya. Dan cukuplah Kami sebagai Pembuat perhitungan.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Al-Anbiya' 21:47", "translationBy": "Kemenag", "verified": true },
+      { "type": "quran", "ref": "QS. Az-Zalzalah 99:7–8", "translationBy": "Kemenag", "verified": true }
+    ],
+    "explanation": [
+      "Setiap amalan yang dikerjakan selama di dunia tercatat lengkap tanpa ada yang terlewat.",
+      "Amalan tersebut kemudian ditimbang pada timbangan hakiki (Al-Mizan) dengan seadil-adilnya. Kebaikan sekecil atom diperlihatkan, begitu pula keburukan sekecil atom."
+    ],
+    "vocabulary": [
+      { "ar": "الْمِيزَان", "latin": "al-mīzān", "meaning": "timbangan amal di hari kiamat" },
+      { "ar": "مِثْقَالَ ذَرَّةٍ", "latin": "mitsqāla dzarrah", "meaning": "seberat biji atom / partikel terkecil" }
+    ],
+    "scholarNotes": [
+      "Para ulama berbeda pandangan mengenai urutan detail antara hisab, pembagian lembaran kitab, dan penimbangan Al-Mizan. Namun semuanya sepakat tentang kepastian dan keadilan hisab serta mizan."
+    ],
+    "practicalLessons": [
+      "Jangan remehkan senyuman, kata santun, atau sebutir kurma yang disedekahkan; semuanya berharga di atas daun timbangan."
+    ],
+    "furtherReading": [
+      { "type": "quran", "ref": "QS. Al-Haqqah 69:19–25" }
+    ],
+    "scene": "Scene08",
+    "skyTop": "#241410",
+    "skyBottom": "#8a5a3a",
+    "glow": "#ffe0a0"
+  },
+  {
+    "id": 9,
+    "slug": "telaga",
+    "labelId": "TELAGA",
+    "labelAr": "الْحَوْض",
+    "transliteration": "al-hawdh",
+    "mood": "sejuk",
+    "headline": "Airnya lebih putih dari susu dan manis dari madu. Siapa yang minum takkan haus selamanya.",
+    "showYouAreHere": false,
+    "arabic": "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+    "translation": "Sungguh, Kami telah memberimu (Muhammad) nikmat yang banyak (Al-Kautsar).",
+    "sources": [
+      { "type": "quran", "ref": "QS. Al-Kautsar 108:1", "translationBy": "Kemenag", "verified": true },
+      { "type": "hadits", "ref": "HR. Bukhari no. 6579 & Muslim no. 2292", "translationBy": "Resmi", "verified": true }
+    ],
+    "explanation": [
+      "Al-Hawdh adalah telaga kemuliaan Rasulullah ﷺ yang luasnya sejarak perjalanan sebulan.",
+      "Umat yang setia berpegang teguh pada sunnah dan ajaran beliau akan meneguk kesegaran airnya, sedangkan mereka yang mengubah-ubah ajaran akan dihalangi oleh malaikat."
+    ],
+    "vocabulary": [
+      { "ar": "الْحَوْض", "latin": "al-hawdh", "meaning": "telaga nabi pelepas dahaga mahsyar" },
+      { "ar": "الْكَوْثَر", "latin": "al-kautsar", "meaning": "sungai di surga yang mengalir ke telaga" }
+    ],
+    "scholarNotes": [
+      "Ulama berbeda pendapat apakah letak Al-Hawdh berada sebelum melewati shirath di padang mahsyar atau setelah menyeberangi shirath (Ibnu Hajar dalam Fathul Bari menguatkan pendapat bahwa telaga berada sebelum shirath)."
+    ],
+    "practicalLessons": [
+      "Jaga keaslian ajaran Nabi ﷺ dan eratkan persaudaraan umat agar tidak termasuk golongan yang terhalang dari telaga."
+    ],
+    "furtherReading": [
+      { "type": "kitab", "ref": "Fathul Bari Syarah Shahih Bukhari 11/466" }
+    ],
+    "scene": "Scene09",
+    "skyTop": "#0a1230",
+    "skyBottom": "#cfe1f5",
+    "glow": "#ffffff"
+  },
+  {
+    "id": 10,
+    "slug": "pemisahan",
+    "labelId": "PEMISAHAN",
+    "labelAr": "التَّمْيِيز",
+    "transliteration": "at-tamyīz",
+    "mood": "pemisah",
+    "headline": "Tiap manusia mengikuti apa yang dulu disembahnya. Yang beriman bersujud; orang riya kaku punggungnya.",
+    "showYouAreHere": false,
+    "arabic": "وَامْتَازُوا الْيَوْمَ أَيُّهَا الْمُجْرِمُونَ",
+    "translation": "Dan berpisahlah kamu (dari orang-orang mukmin) pada hari ini, wahai orang-orang yang berbuat jahat!",
+    "sources": [
+      { "type": "quran", "ref": "QS. Yasin 36:59", "translationBy": "Kemenag", "verified": true },
+      { "type": "hadits", "ref": "HR. Bukhari no. 6573 & Muslim no. 182", "translationBy": "Resmi", "verified": true }
+    ],
+    "explanation": [
+      "Pada hari itu, Allah memisahkan barisan orang-orang yang ingkar mengikuti sembahannya masing-masing.",
+      "Tersisalah orang-orang beriman bersama kaum munafik, lalu diadakan ujian sujud: orang mukmin bersujud dengan mudah, sedangkan orang munafik punggungnya kaku bagai lempengan tembaga karena dulu di dunia shalat hanya untuk pamer (riya)."
+    ],
+    "vocabulary": [
+      { "ar": "التَّمْيِيز", "latin": "at-tamyīz", "meaning": "penyortiran / pemisahan barisan hak dan batil" },
+      { "ar": "الرِّيَاء", "latin": "ar-riyā'", "meaning": "pamer amal ingin dilihat dan dipuji manusia" }
+    ],
+    "scholarNotes": [
+      "Hadis panjang riwayat Bukhari dan Muslim menjelaskan tahap pemisahan ini secara terperinci sebagai penyaring terakhir sebelum jembatan shirath dibentangkan."
+    ],
+    "practicalLessons": [
+      "Murnikan niat beribadah hanya mengharap ridha Allah. Buang keinginan mencari pujian dan sanjungan manusia."
+    ],
+    "furtherReading": [
+      { "type": "quran", "ref": "QS. Al-Munafiqun 63:1–4" }
+    ],
+    "scene": "Scene10",
+    "skyTop": "#070b1a",
+    "skyBottom": "#101830",
+    "glow": "#c8d4ff"
+  },
+  {
+    "id": 11,
+    "slug": "shirath",
+    "labelId": "SHIRATH",
+    "labelAr": "الصِّرَاط",
+    "transliteration": "ash-shirāth",
+    "mood": "genting",
+    "headline": "Jembatan tipis di atas neraka. Ada yang melintas secepat kilat, ada yang tersambar. Doa rasul: 'Ya Allah, selamatkan!'",
+    "showYouAreHere": false,
+    "arabic": "وَإِن مِّنكُمْ إِلَّا وَارِدُهَا ۚ كَانَ عَلَىٰ رَبِّكَ حَتْمًا مَّقْضِيًّا",
+    "translation": "Dan tidak ada seorang pun di antara kamu melainkan akan mendatanginya. Hal itu bagi Tuhanmu adalah suatu ketentuan yang sudah ditetapkan.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Maryam 19:71–72", "translationBy": "Kemenag", "verified": true },
+      { "type": "hadits", "ref": "HR. Bukhari no. 6573 & Muslim no. 183", "translationBy": "Resmi", "verified": true }
+    ],
+    "explanation": [
+      "Ash-Shirāth adalah jembatan yang dibentangkan di atas jurang neraka Jahannam.",
+      "Kecepatan manusia melintasinya sebanding dengan kecepatan mereka menyambut seruan Allah di dunia: ada yang secepat kedipan mata, secepat kilat, secepat angin kencang, berlari, berjalan, hingga merangkak terluka.",
+      "Di sisi jembatan terdapat besi-besi pencakar (kalalib) yang menyambar siapa saja yang diperintahkan."
+    ],
+    "vocabulary": [
+      { "ar": "الصِّرَاط", "latin": "ash-shirāth", "meaning": "jembatan titian di atas jurang neraka" },
+      { "ar": "اللَّهُمَّ سَلِّمْ سَلِّمْ", "latin": "Allāhumma sallim sallim", "meaning": "Ya Allah, selamatkanlah, selamatkanlah" }
+    ],
+    "scholarNotes": [
+      "Sebagian ulama menafsirkan kata 'wāriduhā' dalam QS. Maryam 19:71 sebagai melintasi jembatan shirath di atasnya, lalu orang-orang bertakwa diselamatkan oleh Allah sebagaimana kelanjutan ayat 72."
+    ],
+    "practicalLessons": [
+      "Tingkatkan kesigapan kita dalam menunaikan shalat dan kebaikan di dunia agar langkah kita di atas shirath kelak seringan kilat."
+    ],
+    "furtherReading": [
+      { "type": "quran", "ref": "QS. Al-Hadid 57:12 (Cahaya Orang Mukmin)" }
+    ],
+    "scene": "Scene11",
+    "skyTop": "#12050a",
+    "skyBottom": "#4a1010",
+    "glow": "#ff9a6a"
+  },
+  {
+    "id": 12,
+    "slug": "qantharah-surga",
+    "labelId": "QANTHARAH & SURGA",
+    "labelAr": "الْقَنْطَرَة وَالْجَنَّة",
+    "transliteration": "al-qantharah wal-jannah",
+    "mood": "kemenangan",
+    "headline": "Kezaliman sesama mukmin dituntaskan hingga hati bersih tanpa dendam, lalu dipersilakan masuk surga kemenangan abadi.",
+    "showYouAreHere": false,
+    "arabic": "فَمَن زُحْزِحَ عَنِ النَّارِ وَأُدْخِلَ الْجَنَّةَ فَقَدْ فَازَ",
+    "translation": "Barangsiapa dijauhkan dari neraka dan dimasukkan ke dalam surga, sungguh dia telah memperoleh kemenangan.",
+    "sources": [
+      { "type": "quran", "ref": "QS. Ali 'Imran 3:185", "translationBy": "Kemenag", "verified": true },
+      { "type": "quran", "ref": "QS. Al-Hijr 15:47", "translationBy": "Kemenag", "verified": true },
+      { "type": "hadits", "ref": "HR. Bukhari no. 6535", "translationBy": "Resmi", "verified": true }
+    ],
+    "explanation": [
+      "Setelah lolos dari jembatan shirath, kaum mukminin tidak langsung masuk surga, melainkan ditahan di sebuah jembatan lengkung (Qantharah).",
+      "Di sana terjadi qishash penuntasan hak-hak sosial di antara sesama mukmin. Semua rasa sakit, gesekan, dan hak dituntaskan hingga dada mereka benar-benar bersih dari rasa dendam dan dengki.",
+      "Setelah suci bersih, mereka disambut para malaikat di pintu gerbang surga dengan ucapan: 'Salamun 'alaikum, masuklah ke dalamnya dalam keadaan kekal.'"
+    ],
+    "vocabulary": [
+      { "ar": "الْقَنْطَرَة", "latin": "al-qantharah", "meaning": "jembatan lengkung tempat pembersihan hak sesama mukmin" },
+      { "ar": "الْجَنَّة", "latin": "al-jannah", "meaning": "taman surga kenikmatan abadi" },
+      { "ar": "غِلٍّ", "latin": "ghill", "meaning": "rasa dengki, dendam, atau iri hati" }
+    ],
+    "scholarNotes": [
+      "Imam Ibnu Hajar al-Asqalani dalam Fathul Bari menjelaskan bahwa pembersihan di Qantharah khusus untuk menuntaskan kezaliman antar sesama orang beriman agar masuk surga dalam keadaan jiwa yang paling suci."
+    ],
+    "practicalLessons": [
+      "Selesaikan urusan dengan sesama manusia sekarang di dunia: lunasi utang, kembalikan amanah, dan saling memaafkan. Berdamai di dunia jauh lebih mudah daripada di akhirat."
+    ],
+    "furtherReading": [
+      { "type": "quran", "ref": "QS. Az-Zumar 39:73 (Penyambutan Masuk Surga)" }
+    ],
+    "scene": "Scene12",
+    "skyTop": "#1a1230",
+    "skyBottom": "#ffcf8a",
+    "glow": "#fff3d0"
+  }
+]

@@ -26,6 +26,14 @@ Proyek ini telah direfaktor dan di-modularisasi sepenuhnya ke dalam arsitektur *
 
 ## ✨ Fitur-Fitur Interaktif
 
+### 0. 🌌 Perjalanan 12 Tahap (Edukasi Interaktif & Sinematik)
+- **Halaman Edukatif Terpisah**: Diakses via tombol khusus di navbar (`/perjalanan-12-tahap`).
+- **Peta Perjalanan Jiwa**: Mengulas 12 alam perjalanan manusia (Sebelum Lahir &rarr; Rahim &rarr; Dunia &rarr; Barzakh &rarr; Sangkakala &rarr; Mahsyar &rarr; Syafaat &rarr; Catatan/Timbangan &rarr; Telaga &rarr; Pemisahan &rarr; Shirath &rarr; Qantharah/Surga).
+- **Mode Sinematik & Mode Baca**: Pengalaman layar penuh 100dvh per tahap atau tata letak vertikal untuk membaca santai.
+- **Tipografi Arab Bilingual**: Menggunakan font Amiri dengan harakat jelas, terjemahan resmi Kemenag, dan catatan perbedaan pendapat ulama.
+- **Panel Tafsir Mendalam (*Deep Dive*)**: Bottom-sheet / side drawer berisi kosakata Arab, dalil lengkap, dan hikmah praktis.
+- **Fitur Interaktif Tambahan**: Kuis pemahaman 12 soal interaktif, glosarium istilah Islam, dan checklist bekal amal dari Tahap Dunia.
+
 ### 1. 🔤 Tipografi Kinetik & Fisika 2D (Matter.js)
 - **Huruf Karet (*Squash & Stretch*)**: Huruf judul membal elastis mengikuti kedekatan kursor mouse.
 - **Tombol Magnetik**: Tombol-tombol utama tertarik lembut ke arah kursor.

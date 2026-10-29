@@ -6,19 +6,24 @@
         </a>
 
         <div class="flex items-center flex-wrap gap-2 text-sm font-bold">
-            <a href="#badge" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--yl)] transition-colors no-underline">
+            <a href="{{ url('/perjalanan-12-tahap') }}" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--pk)] text-white hover:bg-[var(--yl)] hover:text-[var(--ink)] transition-all no-underline flex items-center gap-1.5 shadow-[2px_2px_0_var(--ink)] font-black" title="Pelajari 12 Tahap Perjalanan Manusia Menurut Dalil">
+                <span>🌌</span>
+                <span class="hidden sm:inline">Perjalanan 12 Tahap</span>
+                <span class="sm:hidden">12 Tahap</span>
+            </a>
+            <a href="{{ url('/#badge') }}" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--yl)] transition-colors no-underline">
                 🪪 ID
             </a>
-            <a href="#os" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--gr)] transition-colors no-underline">
+            <a href="{{ url('/#os') }}" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--gr)] transition-colors no-underline">
                 💻 Win98
             </a>
-            <a href="#chaos" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--pk)] hover:text-white transition-colors no-underline">
+            <a href="{{ url('/#chaos') }}" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--pk)] hover:text-white transition-colors no-underline">
                 ⚡ Chaos
             </a>
-            <a href="#stk" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--bl)] hover:text-white transition-colors no-underline">
+            <a href="{{ url('/#stk') }}" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--bl)] hover:text-white transition-colors no-underline">
                 🎨 Stiker
             </a>
-            <a href="#kupon" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--yl)] transition-colors no-underline">
+            <a href="{{ url('/#kupon') }}" class="px-3 py-1.5 rounded-xl border-2 border-[var(--ink)] bg-[var(--bg)] text-[var(--ink)] hover:bg-[var(--yl)] transition-colors no-underline">
                 🪙 Kupon
             </a>
         </div>
